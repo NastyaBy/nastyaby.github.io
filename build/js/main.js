@@ -16,3 +16,6 @@ const rangepicker = new DateRangePicker(rangeDatePicker, {
     allowOneSidedRange: true,
     autohide: true
 });
+
+
+// popup
