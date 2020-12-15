@@ -1,32 +1,31 @@
-const inlineDatePicker = document.getElementById('inlineDatePicker');
+const inlineDatePicker1 = document.getElementById('inlineDatePicker1');
+const inlineDatePicker2 = document.getElementById('inlineDatePicker2');
+const inlineDatePicker3 = document.getElementById('inlineDatePicker3');
 const rangeDatePicker = document.getElementById('rangeDatePicker');
 
-const today = new Date()
-const today2 = new Date()
+let currentMonth = dayjs()
+let prevMonth = dayjs().subtract(1, 'month')
+let nextMonth = dayjs().add(1, 'month')
 
-const currentMonth = new Date()
-const prevMonth = today.setMonth(today.getMonth() - 1)
-const nextMonth = today2.setMonth(today2.getMonth() + 1)
-
-const main1 = new Datepicker(inlineDatePicker1, {
+const calendar1 = new Datepicker(inlineDatePicker1, {
     language: 'ru',
     format: 'dd.mm.yyyy',
-    todayHighlight: true,
-    defaultViewDate: prevMonth
+    //todayHighlight: true,
+    defaultViewDate: prevMonth.format('DD.MM.YYYY')
 });
 
-const main2 = new Datepicker(inlineDatePicker2, {
+const calendar2 = new Datepicker(inlineDatePicker2, {
     language: 'ru',
     format: 'dd.mm.yyyy',
     todayHighlight: true,
-    defaultViewDate: currentMonth
+    defaultViewDate: currentMonth.format('DD.MM.YYYY')
 });
 
-const main3 = new Datepicker(inlineDatePicker3, {
+const calendar3 = new Datepicker(inlineDatePicker3, {
     language: 'ru',
     format: 'dd.mm.yyyy',
-    todayHighlight: true,
-    defaultViewDate: nextMonth
+    //todayHighlight: true,
+    defaultViewDate: nextMonth.format('DD.MM.YYYY')
 });
 
 const rangepicker = new DateRangePicker(rangeDatePicker, {
@@ -37,19 +36,44 @@ const rangepicker = new DateRangePicker(rangeDatePicker, {
     autohide: true
 });
 
-const calendar1 = inlineDatePicker1;
-const calendar2 = inlineDatePicker2;
-const calendar3 = inlineDatePicker3;
 
-const prevDataBtn = calendar1.querySelector('.prev-btn');
-const nextDataBtn = calendar3.querySelector('.next-btn');
+const prevDataBtn = inlineDatePicker1.querySelector('.prev-btn');
+const nextDataBtn = inlineDatePicker3.querySelector('.next-btn');
 
 prevDataBtn.addEventListener('click', (evt) => {
+    currentMonth = currentMonth.subtract(1, 'month')
+    prevMonth = prevMonth.subtract(1, 'month')
+    nextMonth = nextMonth.subtract(1, 'month')
 
+    calendar1.setDate(prevMonth.format('DD.MM.YYYY'))
+    calendar2.setDate(currentMonth.format('DD.MM.YYYY'))
+    calendar3.setDate(nextMonth.format('DD.MM.YYYY'))
 });
 
 nextDataBtn.addEventListener('click', (evt) => {
-    console.info('next');
+
+    currentMonth = currentMonth.add(1, 'month')
+    prevMonth = prevMonth.add(1, 'month')
+    nextMonth = nextMonth.add(1, 'month')
+
+    calendar1.setDate(prevMonth.format('DD.MM.YYYY'))
+    calendar2.setDate(currentMonth.format('DD.MM.YYYY'))
+    calendar3.setDate(nextMonth.format('DD.MM.YYYY'))
 });
 
 
+inlineDatePicker1.addEventListener('changeDate',(evt) => {
+    changeDataPicker(calendar1.getDate( 'dd.mm.yyyy'))
+})
+
+inlineDatePicker2.addEventListener('changeDate',(evt) => {
+    changeDataPicker(calendar2.getDate( 'dd.mm.yyyy'))
+})
+
+inlineDatePicker3.addEventListener('changeDate',(evt) => {
+    changeDataPicker(calendar3.getDate( 'dd.mm.yyyy'))
+})
+
+const changeDataPicker = (date) => {
+    console.log(date)
+}
