@@ -24,18 +24,22 @@ const logbookInfo = () => {
         })
     })
 
+    const purposeOfTrip = document.querySelector('.js-purposeOfTrip')
+    const playground = document.querySelector('.js-playground')
 
     const changeShroud = () => {
-
-        if (window.map.getIsPageActive()) {
-            console.log('показать')
-            //adForm.classList.remove(`ad-form--disabled`);
+        if(purposeOfTrip.value !== 'Move') {
+            playground.setAttribute('disabled', 'disabled')
         } else {
-            console.log('нельщя')
-           // adForm.classList.add(`ad-form--disabled`);
-
+            playground.removeAttribute('disabled')
         }
     };
+
+    purposeOfTrip.addEventListener('change', () => {
+        changeShroud()
+    })
+
+    changeShroud()
 }
 
 logbookInfo()
