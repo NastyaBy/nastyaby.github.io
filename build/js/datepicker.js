@@ -2,7 +2,6 @@ const datePicker = () => {
     const inlineDatePicker1 = document.getElementById('inlineDatePicker1')
     const inlineDatePicker2 = document.getElementById('inlineDatePicker2')
     const inlineDatePicker3 = document.getElementById('inlineDatePicker3')
-    const rangeDatePicker = document.getElementById('rangeDatePicker')
 
     let currentMonth = dayjs()
     let prevMonth = dayjs().subtract(1, 'month')
@@ -28,15 +27,6 @@ const datePicker = () => {
         //todayHighlight: true,
         defaultViewDate: nextMonth.format('DD.MM.YYYY')
     })
-
-    const rangepicker = new DateRangePicker(rangeDatePicker, {
-        language: 'ru',
-        format: 'dd.mm.yy',
-        todayHighlight: true,
-        allowOneSidedRange: true,
-        autohide: true
-    })
-
 
     const prevDataBtn = inlineDatePicker1.querySelector('.prev-btn')
     const nextDataBtn = inlineDatePicker3.querySelector('.next-btn')

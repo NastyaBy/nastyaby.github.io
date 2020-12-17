@@ -1,13 +1,22 @@
 const timepicker = () => {
     const inputTimepicker = document.querySelectorAll('.js-openTimepicker')
-    const blackoutTimepicker = document.querySelector('.js-closeTimepicker')
     const openTimepickerClass = 'fieldset__dropdown--show'
     const openBlackoutTimepicker = 'fieldset__blackout--show'
 
+
     inputTimepicker.forEach(trigger => {
         const dropdown = trigger.nextElementSibling
-        const selectTimeStart = dropdown.querySelector('.js-timeStart')
-        const selectTimeEnd = dropdown.querySelector('.js-timeEnd')
+        const selectTime = dropdown.querySelector('.js-timeTimepicker')
+        const inputDate = dropdown.querySelector('.js-dateTimepicker')
+        const blackoutTimepicker = dropdown.nextElementSibling
+
+        const rangeDatePicker = new Datepicker(inputDate, {
+            language: 'ru',
+            format: 'dd.mm.yy',
+            todayHighlight: true,
+            allowOneSidedRange: true,
+            autohide: true
+        })
 
         trigger.addEventListener('click', (evt) => {
             evt.preventDefault()
@@ -15,11 +24,12 @@ const timepicker = () => {
             blackoutTimepicker.classList.toggle(openBlackoutTimepicker)
         })
 
-        selectTimeStart.addEventListener('change', (evt) => {
-            changeTimePicker(trigger, selectTimeStart.value, selectTimeEnd.value)
+        selectTime.addEventListener('change', (evt) => {
+            changeTimePicker(trigger, selectTime.value, rangeDatePicker.getDate('dd.mm.yyyy'))
         })
-        selectTimeEnd.addEventListener('change', (evt) => {
-            changeTimePicker(trigger, selectTimeStart.value, selectTimeEnd.value)
+
+        inputDate.addEventListener('changeDate', (evt) => {
+            changeTimePicker(trigger, selectTime.value, rangeDatePicker.getDate('dd.mm.yyyy'))
         })
 
         blackoutTimepicker.addEventListener('click', () => {
@@ -38,8 +48,8 @@ const timepicker = () => {
         })
     })
 
-    const changeTimePicker = (element, timeStart, timeEnd) => {
-        element.value = `c ${timeStart} по ${timeEnd}`
+    const changeTimePicker = (element, timeStart, dataStart) => {
+        element.value = `${timeStart} - ${dataStart}`
     }
 }
 
