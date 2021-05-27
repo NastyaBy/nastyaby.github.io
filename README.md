@@ -1,1 +1,0 @@
-# nastyaby.github.io
