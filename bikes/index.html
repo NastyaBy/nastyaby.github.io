@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Магазин велосипедов. Наш магазин отбирает только самые лучшие велосипеды для продажи. Подберем велосипед Вашей мечты">
+  <meta name="keywords" content="Велосипеды, Дорожный велосипед, Горный велосипед, Детский велосипед">
+  <title>Велосипеды</title>
+  <link rel="stylesheet" href="./css/style.min.css">
+  <link rel="preload" href="./fonts/open-sans-regular.woff2" as="font" type="font/woff2">
+
+</head>
+
+<body class="layout no-js">
+<header class="layout__header">
+  <button class=" header-toggle js-menuToggle" type="button" aria-label="Кнопка меню"></button>
+  <nav class="header-nav js-menuPopup">
+    <a class="js-navigation" href="#aboutUs" aria-label="О нас">О нас</a>
+    <a class="js-navigation" href="#typesBikes" aria-label="Виды велосипедов">Виды велосипедов</a>
+    <a class="js-navigation" href="#videoBicycles" aria-label="Видео про велосипеды">Видео про велосипеды</a>
+    <a class="js-navigation" href="#contacts" aria-label="Контакты">Контакты</a>
+  </nav>
+</header>
+
+<main class="layout__main">
+  <h1 class="visually-hidden">Велосипеды</h1>
+  <section class="intro">
+    <picture>
+      <!-- 1х: 319px; 2x: 638px -->
+      <source type="image/webp" media="(max-width: 767px)" srcset="./img/background-main-block-mobile@1x.webp 1x, ./img/background-main-block-mobile@2x.webp 2x">
+      <!-- 1х: 767px; 2x: 1534px -->
+      <source type="image/webp" media="(max-width: 1023px)" srcset="./img/background-main-block-tablet@1x.webp 1x, ./img/background-main-block-tablet@2x.webp 2x">
+      <!-- 1х: 1440px; 2x: 2880px -->
+      <source type="image/webp" media="(min-width: 1024px)" srcset="./img/background-main-block-desktop@1x.webp 1x, ./img/background-main-block-desktop@2x.webp 2x">
+      <!-- 1х: 319px; 2x: 638px -->
+      <source media="(max-width: 767px)" srcset="./img/background-main-block-mobile@1x.jpg 1x, ./img/background-main-block-mobile@2x.jpg 2x">
+      <!-- 1х: 767px; 2x: 1534px -->
+      <source media="(max-width: 1023px)" srcset="./img/background-main-block-tablet@1x.jpg 1x, ./img/background-main-block-tablet@2x.jpg 2x">
+      <!-- 1х: 1440px; 2x: 2880px -->
+      <source media="(min-width: 1024px)" srcset="./img/background-main-block-desktop@1x.jpg 1x, ./img/background-main-block-desktop@2x.jpg 2x">
+      <!-- 1х: 1440px; 2x: 2880px -->
+      <img src="img/background-main-block-desktop@1x.jpg" srcset="./img/background-main-block-desktop@2x.jpg 2x" width="1440" height="825" alt="Горный велосипед">
+    </picture>
+    <div class="intro__inner">
+      <div class="intro__info">
+        <a class="intro__logo" aria-label="Логотип">
+          <svg width="68" height="21">
+            <use xlink:href="#logo"></use>
+          </svg>
+        </a>
+        <h2>Мы продаем велосипеды </h2>
+        <p>Наш магазин отбирает только самые лучшие велосипеды для продажи</p>
+      </div>
+      <div class="intro__form">
+        <form class="form js-form" action="https://echo.htmlacademy.ru" method="get">
+          <h3>Заполните поля ниже и мы подберем велосипед Вашей мечты</h3>
+          <div class="form-input">
+            <label for="name"></label>
+            <input class="js-validateName" type="text" pattern="\D*" maxlength="50" id="name" name="name" placeholder="Введите Ваше Имя" aria-label="Поле для ввода имени" required="">
+          </div>
+          <div class="form-input">
+            <label for="tel"></label>
+            <input class="js-validateTel" id="tel" name="tel" type="text" pattern="\d*" maxlength="11" placeholder="Введите Ваш номер телефона" aria-label="Поле для ввода телефона" required="">
+          </div>
+          <button class="button js-sendForm" type="submit">Подобрать велосипед мечты</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="data" id="aboutUs">
+    <h2>Несколько фактов о нас</h2>
+    <ul>
+      <li>
+        <h3>01</h3>
+        <p>Самый широкий выбор велосипедов!</p>
+      </li>
+      <li>
+        <h3>02</h3>
+        <p>Доставка велосипедов по всей России!</p>
+      </li>
+      <li>
+        <h3>03</h3>
+        <p>Большой выбор крутых аксессуаров!</p>
+      </li>
+      <li>
+        <h3>04</h3>
+        <p>Профессиональные консультации!</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="types" id="typesBikes">
+    <h2>Виды велосипедов</h2>
+    <ul>
+      <li>
+        <picture>
+          <!-- 1х: 270px; 2x: 540px -->
+          <source type="image/webp" media="(max-width: 767px)" srcset="./img/road-bike-mobile@1x.webp 1x, ./img/road-bike-mobile@2x.webp 2x">
+          <!-- 1х: 270px; 2x: 540px -->
+          <source type="image/webp" media="(max-width: 1023px)" srcset="./img/road-bike-tablet@1x.webp 1x, ./img/road-bike-tablet@2x.webp 2x">
+          <!-- 1х: 342px; 2x: 684px -->
+          <source type="image/webp" media="(min-width: 1024px)" srcset="./img/road-bike-desktop@1x.webp 1x, ./img/road-bike-desktop@2x.webp 2x">
+          <!-- 1х: 270px; 2x: 540px -->
+          <source media="(max-width: 767px)" srcset="./img/road-bike-mobile@1x.jpg 1x, ./img/road-bike-mobile@2x.jpg 2x">
+          <!-- 1х: 270px; 2x: 540px -->
+          <source media="(max-width: 1023px)" srcset="./img/road-bike-tablet@1x.jpg 1x, ./img/road-bike-tablet@2x.jpg 2x">
+          <!-- 1х: 342px; 2x: 684px -->
+          <source media="(min-width: 1024px)" srcset="./img/road-bike-desktop@1x.jpg 1x, ./img/road-bike-desktop@2x.jpg 2x">
+          <!-- 1х: 342px; 2x: 684px -->
+          <img src="img/road-bike-desktop@1x.jpg" srcset="./img/road-bike-desktop@2x.jpg 2x" width="342" height="503" alt="Дорожный велосипед">
+        </picture>
+        <h3>Дорожный велосипед</h3>
+      </li>
+      <li>
+        <picture>
+          <!-- 1х: 270px; 2x: 540px -->
+          <source type="image/webp" media="(max-width: 767px)" srcset="./img/mountain-bike-mobile@1x.webp 1x, ./img/mountain-bike-mobile@2x.webp 2x">
+          <!-- 1х: 270px; 2x: 540px -->
+          <source type="image/webp" media="(max-width: 1023px)" srcset="./img/mountain-bike-tablet@1x.webp 1x, ./img/mountain-bike-tablet@2x.webp 2x">
+          <!-- 1х: 342px; 2x: 684px -->
+          <source type="image/webp" media="(min-width: 1024px)" srcset="./img/mountain-bike-desktop@1x.webp 1x, ./img/mountain-bike-desktop@2x.webp 2x">
+          <!-- 1х: 270px; 2x: 540px -->
+          <source media="(max-width: 767px)" srcset="./img/mountain-bike-mobile@1x.jpg 1x, ./img/mountain-bike-mobile@2x.jpg 2x">
+          <!-- 1х: 270px; 2x: 540px -->
+          <source media="(max-width: 1023px)" srcset="./img/mountain-bike-tablet@1x.jpg 1x, ./img/mountain-bike-tablet@2x.jpg 2x">
+          <!-- 1х: 342px; 2x: 684px -->
+          <source media="(min-width: 1024px)" srcset="./img/mountain-bike-desktop@1x.jpg 1x, ./img/mountain-bike-desktop@2x.jpg 2x">
+          <!-- 1х: 342px; 2x: 684px -->
+          <img src="img/mountain-bike-desktop@1x.jpg" srcset="./img/mountain-bike-desktop@2x.jpg 2x" width="342" height="566" alt="Горный велосипед">
+        </picture>
+        <h3>Горный велосипед</h3>
+      </li>
+      <li>
+        <picture>
+          <!-- 1х: 270px; 2x: 540px -->
+          <source type="image/webp" media="(max-width: 767px)" srcset="./img/childrens-bike-mobile@1x.webp 1x, ./img/childrens-bike-mobile@2x.webp 2x">
+          <!-- 1х: 270px; 2x: 540px -->
+          <source type="image/webp" media="(max-width: 1023px)" srcset="./img/childrens-bike-tablet@1x.webp 1x, ./img/childrens-bike-tablet@2x.webp 2x">
+          <!-- 1х: 342px; 2x: 684px -->
+          <source type="image/webp" media="(min-width: 1024px)" srcset="./img/childrens-bike-desktop@1x.webp 1x, ./img/childrens-bike-desktop@2x.webp 2x">
+          <!-- 1х: 270px; 2x: 540px -->
+          <source media="(max-width: 767px)" srcset="./img/childrens-bike-mobile@1x.jpg 1x, ./img/childrens-bike-mobile@2x.jpg 2x">
+          <!-- 1х: 270px; 2x: 540px -->
+          <source media="(max-width: 1023px)" srcset="./img/childrens-bike-tablet@1x.jpg 1x, ./img/childrens-bike-tablet@2x.jpg 2x">
+          <!-- 1х: 342px; 2x: 684px -->
+          <source media="(min-width: 1024px)" srcset="./img/childrens-bike-desktop@1x.jpg 1x, ./img/childrens-bike-desktop@2x.jpg 2x">
+          <!-- 1х: 342px; 2x: 684px -->
+          <img src="img/childrens-bike-desktop@1x.jpg" srcset="./img/childrens-bike-desktop@2x.jpg 2x" width="342" height="513" alt="Дорожный велосипед">
+        </picture>
+        <h3>Детский велосипед</h3>
+      </li>
+    </ul>
+  </section>
+
+  <section class="video" id="videoBicycles">
+    <h2>Видео про велосипеды</h2>
+    <p>В этом видео мы подробно расскажем про особенности выбора велосипеда для себя.</p>
+    <div class="player">
+      <picture>
+        <!-- 1х: 288px; 2x: 576px -->
+        <source type="image/webp" media="(max-width: 767px)" srcset="./img/video-about-bicycles-mobile@1x.webp 1x, ./img/video-about-bicycles-mobile@2x.webp 2x">
+        <!-- 1х: 503px; 2x: 1006px -->
+        <source type="image/webp" media="(max-width: 1023px)" srcset="./img/video-about-bicycles-tablet@1x.webp 1x, ./img/video-about-bicycles-tablet@2x.webp 2x">
+        <!-- 1х: 929px; 2x: 1858px -->
+        <source type="image/webp" media="(min-width: 1024px)" srcset="./img/video-about-bicycles-desktop@1x.webp 1x, ./img/video-about-bicycles-desktop@2x.webp 2x">
+        <!-- 1х: 288px; 2x: 576px -->
+        <source media="(max-width: 767px)" srcset="./img/video-about-bicycles-mobile@1x.jpg 1x, ./img/video-about-bicycles-mobile@2x.jpg 2x">
+        <!-- 1х: 503px; 2x: 1006px -->
+        <source media="(max-width: 1023px)" srcset="./img/video-about-bicycles-tablet@1x.jpg 1x, ./img/video-about-bicycles-tablet@2x.jpg 2x">
+        <!-- 1х: 929px; 2x: 1858px -->
+        <source media="(min-width: 1024px)" srcset="./img/video-about-bicycles-desktop@1x.jpg 1x, ./img/video-about-bicycles-desktop@2x.jpg 2x">
+        <!-- 1х: 929px; 2x: 1858px -->
+        <img src="img/video-about-bicycles-desktop@1x.jpg" srcset="./img/video-about-bicycles-desktop@2x.jpg 2x" width="929" height="522" alt="Видео про велосипеды">
+      </picture>
+      <button type="submit" aria-label="Воспроизвести видео">
+        Воспроизвести видео
+        <svg width="65" height="65">
+          <use xlink:href="#play-icon"></use>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <h2>Как нас найти?</h2>
+    <p>Мы находимся по адресу:<br class="br-phone-only"> Санкт-Петербург, ул. Большая Конюшенная,
+      д. 19</p>
+    <picture>
+      <!-- 1х: 319px; 2x: 638px -->
+      <source type="image/webp" media="(max-width: 767px)" srcset="./img/map-mobile@1x.webp 1x, ./img/map-mobile@2x.webp 2x">
+      <!-- 1х: 698px; 2x: 1396px -->
+      <source type="image/webp" media="(max-width: 1023px)" srcset="./img/map-tablet@1x.webp 1x, ./img/map-tablet@2x.webp 2x">
+      <!-- 1х: 957px; 2x: 1914px -->
+      <source type="image/webp" media="(min-width: 1024px)" srcset="./img/map-desktop@1x.webp 1x, ./img/map-desktop@2x.webp 2x">
+      <!-- 1х: 319px; 2x: 638px -->
+      <source media="(max-width: 767px)" srcset="./img/map-mobile@1x.jpg 1x, ./img/map-mobile@2x.jpg 2x">
+      <!-- 1х: 698px; 2x: 1396px -->
+      <source media="(max-width: 1023px)" srcset="./img/map-tablet@1x.jpg 1x, ./img/map-tablet@2x.jpg 2x">
+      <!-- 1х: 957px; 2x: 1914px -->
+      <source media="(min-width: 1024px)" srcset="./img/map-desktop@1x.jpg 1x, ./img/map-desktop@2x.jpg 2x">
+      <!-- 1х: 957px; 2x: 1914px -->
+      <img src="img/map-desktop@1x.jpg" srcset="./img/map-desktop@2x.jpg 2x" width="957" height="530" alt="Карта">
+    </picture>
+  </section>
+</main>
+
+<footer class="layout__footer">
+  <div class="footer">
+    <a href="mailto:puteshestviemechta@gmail.ru" aria-label="Наш почтовый ящик puteshestviemechta@gmail.ru">
+      <svg width="26" height="20">
+        <use xlink:href="#letter-icon"></use>
+      </svg>
+      puteshestviemechta@gmail.ru</a>
+    <a href="tel:+749978468446" aria-label="Позвонить нам на телефон +7 499 784 684 46">
+      <svg width="22" height="24">
+        <use xlink:href="#phone-icon"></use>
+      </svg>
+      +7 (499) -784-684-46</a>
+  </div>
+
+</footer>
+
+<svg style="display: none;">
+  <symbol id="logo" viewBox="0 0 68 21" fill="none" preserveAspectRatio="xMidYMid meet">
+    <path d="M13.364 0v20.046H10.07V5.822L8.973 7.207 6.825 9.975l-.095.095-.144-.095L4.44 7.207 3.34 5.775v14.27H0V0h3.34l3.39 4.295L10.07 0h3.294zM8.304 10.07l-.095-.095.095.095z" fill="#0AD9C6"></path>
+    <path d="M8.448 9.975l-.096.095h-.047l.143-.095zM38.21 5.615l-9.128 6.701 2.113 2.878 9.127-6.701-2.113-2.878z" fill="#0AD9C6"></path>
+    <path d="M26.667 3c-3.864 0-7.043 3.13-7.043 7.043 0 3.864 3.13 7.043 7.043 7.043 3.864 0 7.044-3.13 7.044-7.043C33.71 6.18 30.53 3 26.667 3zm0 10.271a3.225 3.225 0 01-3.228-3.228 3.225 3.225 0 013.228-3.228c1.761 0 3.228 1.467 3.228 3.228 0 1.76-1.467 3.228-3.228 3.228zM43.64 3c-3.864 0-7.044 3.13-7.044 7.043 0 3.864 3.13 7.043 7.044 7.043 3.864 0 7.043-3.13 7.043-7.043C50.633 6.18 47.503 3 43.64 3zm0 10.271a3.225 3.225 0 01-3.229-3.228 3.225 3.225 0 013.229-3.228c1.76 0 3.228 1.467 3.228 3.228 0 1.76-1.468 3.228-3.228 3.228zM67.598.239v20.045h-3.341V9.88L61.44 7.207l-2.1-2.052v15.13H56V.238h3.341l3.913 3.77 1.003.955V.239h3.34z" fill="#0AD9C6"></path>
+    <path fill="#0AD9C6" d="M37 3h6v4h-6z"></path>
+  </symbol>
+
+  <symbol id="letter-icon" viewBox="0 0 26 20" fill="none">
+    <path d="M24.227 0H1.773C.768 0 0 .765 0 1.765v16.47C0 19.235.768 20 1.773 20h22.454C25.232 20 26 19.235 26 18.235V1.765C26 .765 25.232 0 24.227 0zm0 17l-4.668-4.647a.86.86 0 00-1.24 0 .85.85 0 000 1.235l4.667 4.647H3.014l4.668-4.647a.85.85 0 000-1.235.86.86 0 00-1.241 0L1.773 17V5.706l10.636 8a.955.955 0 00.532.176.955.955 0 00.532-.176l10.754-8V17zm0-15.235V3.47l-11.286 8.352L1.773 3.471V1.765h22.454z" fill="#0AD9C6"></path>
+  </symbol>
+
+  <symbol id="phone-icon" viewBox="0 0 22 24" fill="none">
+    <path d="M3.456 6.624c-.084-1.198.182-2.378.885-3.327.61-.86 1.404-1.33 2.362-1.605.806-.24 1.334.054 1.567.95.332 1.34.806 2.68.978 4.092.055.62-.347 1.5-.782 1.952-1.09 1.073-.863 1.854-.036 3.478.257.524.664 1.43 1.459 2.628.827 1.207 1.265 1.855 2.328 1.306 1.18-.594 2.041-.212 2.932.746.604.693 1.269 1.288 1.873 1.98.872 1.03.833 1.74.15 2.467-1.229 1.34-3.258 1.783-4.768.886-.833-.489-1.664-1.128-2.325-1.874-2.914-3.32-5.016-7.182-6.281-11.54a10.989 10.989 0 01-.342-2.139z" stroke="#0AD9C6" stroke-width="2" stroke-miterlimit="10"></path>
+  </symbol>
+
+  <symbol id="play-icon" viewBox="0 0 65 65" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M32.5 65C50.45 65 65 50.45 65 32.5S50.45 0 32.5 0 0 14.55 0 32.5 14.55 65 32.5 65z" fill="#0AD9C6"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M28.6 23.4l13 9.1-13 9.1V23.4z" fill="#070707"></path>
+  </symbol>
+</svg>
+
+</body>
+</html>
