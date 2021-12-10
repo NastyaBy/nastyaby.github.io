@@ -6,31 +6,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="layout">
-<header>
-    <ul class="contacts">
-        <li class="contacts__item">
-            <a class="contacts__reference" href="https://github.com/NastyaBy" target="_blank"
-               aria-label="Ссылка на GitHub">Ссылка на GitHub</a>
-        </li>
-        <li class="contacts__item">
-            <a class="contacts__reference" href="https://hh.ru/resume/0629f0c1ff0887d63e0039ed1f4e436147356e"
-               target="_blank" aria-label="Ссылка на резюме hh.ru">Ссылка
-                на резюме hh.ru</a>
-        </li>
-        <li class="contacts__item">
-            <a class="contacts__reference" href="https://www.facebook.com/nastya.slutsk" target="_blank"
-               aria-label="Ссылка на страницу facebook">Ссылка на страницу facebook</a>
-        </li>
-        <li class="contacts__item">
-            <a class="contacts__reference" href="mailto:nastya.slutsk@gmail.com" target="_blank"
-               aria-label="nastya.slutsk@gmail.com">Почта для связи: nastya.slutsk@gmail.com</a>
-        </li>
-    </ul>
+<header class="layout__header">
 </header>
 
-<main>
+<main class="layout__main">
     <h1 class="heading">Портфолио Герасименко Анастасия</h1>
-    <section>
+    <section class="section">
         <h2>Учебные проекты <a href="https://htmlacademy.ru/" target="_blank" aria-label="HTML Academy">HTML Academy</a></h2>
         <ul>
             <li>
@@ -80,7 +61,7 @@
         </ul>
     </section>
 
-    <section>
+    <section class="section">
         <h2>Стажеровочные проекты Акселератор HTML Academy</h2>
         <ul>
 
@@ -160,7 +141,7 @@
         </ul>
     </section>
 
-    <section>
+    <section class="section">
         <h2>Интерфейс для <a href="https://www.bitrix24.by/" target="_blank" aria-label="Битрикс 24">Битрикс 24</a></h2>
         <ul>
             <li>
@@ -181,7 +162,7 @@
         </ul>
     </section>
 
-    <section>
+    <section class="section">
         <h2>Реализация сайта на <a href="http://tilda.cc/ru/" target="_blank" aria-label="Тильда">Tilda </a></h2>
         <ul>
             <li>
@@ -195,9 +176,42 @@
 
 </main>
 
-<footer></footer>
+<footer class="layout__footer">
+    <ul class="contacts">
+        <li class="contacts__item">
+            <a class="contacts__reference" href="https://github.com/NastyaBy" target="_blank"
+               aria-label="Ссылка на GitHub">Ссылка на GitHub
+                <svg width="27" height="27">
+                    <use xlink:href="#icon-GitHub"></use>
+                </svg></a>
+        </li>
+        <li class="contacts__item">
+            <a class="contacts__reference" href="https://hh.ru/resume/0629f0c1ff0887d63e0039ed1f4e436147356e"
+               target="_blank" aria-label="Ссылка на резюме hh.ru">Ссылка
+                на резюме hh.ru
+                <svg width="27" height="27">
+                    <use xlink:href="#icon-hh"></use>
+                </svg></a>
+        </li>
+        <li class="contacts__item">
+            <a class="contacts__reference" href="https://www.facebook.com/nastya.slutsk" target="_blank"
+               aria-label="Ссылка на страницу facebook">Ссылка на страницу facebook <svg width="27" height="27">
+                <use xlink:href="#icon-facebook"></use>
+            </svg></a>
+        </li>
+        <li class="contacts__item">
+            <a class="contacts__reference" href="mailto:nastya.slutsk@gmail.com" target="_blank"
+               aria-label="nastya.slutsk@gmail.com">Почта для связи: nastya.slutsk@gmail.com <svg width="27" height="27">
+                <use xlink:href="#icon-gmail"></use>
+            </svg></a>
+        </li>
+    </ul>
+</footer>
 
 <script src="./main.js"></script>
 
+<svg style="display: none">
+
+</svg>
 </body>
 </html>
