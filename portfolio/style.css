@@ -29,16 +29,13 @@
 
 .contacts {
     max-width: 1450px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
 }
 
 .contacts__item {
-
     list-style: none;
-
 }
 
 .contacts__reference {
