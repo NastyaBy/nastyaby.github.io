@@ -45,6 +45,7 @@
             vertical-align: top;
             cursor: pointer;
             margin: 10px 0 0 10px;
+            max-width: 985px;
             width: calc(33.33% - 10px);
             cursor: pointer;
             -webkit-box-shadow: -1px 1px 5px rgb(207 207 207 / 65%);
@@ -179,7 +180,7 @@
             }
         }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 602px) {
             .list-videos .item {
                 width: calc(50% - 10px);
             }
@@ -189,7 +190,11 @@
             }
         }
 
-        @media screen and (max-width: 386px) {
+        @media screen and (max-width: 383px) {
+            .margin-fix {
+                margin: -5px 0 0 -5px;
+            }
+
              .list-videos .item {
                 width: calc(100% - 5px);
                 margin: 5px 0 0 5px;
