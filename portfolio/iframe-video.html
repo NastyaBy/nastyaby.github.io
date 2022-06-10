@@ -9,6 +9,7 @@
             background: #ffffff;
             font-size: 62.5%;
         }
+
         body {
             font: 400 14px/1.2 "Roboto", Helvetica, sans-serif;
             min-height: 100%;
@@ -18,6 +19,7 @@
             -webkit-text-size-adjust: none;
             -ms-text-size-adjust: none;
         }
+
         a {
             color: #212121;
             text-decoration: none;
@@ -25,19 +27,28 @@
             -webkit-transition: color 0.3s, background-color 0.3s;
             transition: color 0.3s, background-color 0.3s;
         }
+
+        .related-videos {
+            width: 100%;
+        }
+
+
         .box {
             margin: 0 0 3rem;
             width: 100%;
         }
+
         div {
             margin: 0;
             padding: 0;
         }
+
         .margin-fix {
             margin: -10px 0 0 -10px;
             font-size: 0;
             line-height: 0;
         }
+
         .list-videos .item {
             display: inline-block;
             text-align: left;
@@ -50,6 +61,7 @@
             border-radius: 0 0 5px 5px;
             background-color: #ffffff;
         }
+
         .item .img {
             position: relative;
             background-color: #e0dfdf;
@@ -62,11 +74,13 @@
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
         }
+
         .list-videos .item a {
             display: block;
             font-size: 12px;
             line-height: 1.2;
         }
+
         .item .img img:first-child {
             position: absolute;
             top: 0;
@@ -78,6 +92,7 @@
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
         }
+
         .item .title {
             font-size: 14px;
             font-weight: 500;
@@ -90,9 +105,11 @@
             transition: color 0.3s;
             overflow: hidden;
         }
+
         .list-videos .item .title {
             height: 45px;
         }
+
         .item .wrap {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -108,6 +125,7 @@
             font-size: 12px;
             line-height: 1.2;
         }
+
         .item .wrap .duration:before,
         .item .wrap .rating:before,
         .item .wrap .added:before,
@@ -122,6 +140,7 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .item .wrap .duration:before {
             background-image: url('data:image/jpeg;base64,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');
         }
@@ -159,7 +178,7 @@
             display: none;
         }
 
-        @media screen and (max-width: 860px){
+        @media screen and (max-width: 860px) {
             .list-videos .item {
                 width: calc(33.33% - 10px);
             }
@@ -184,7 +203,7 @@
                 margin: -5px 0 0 -5px;
             }
 
-             .list-videos .item {
+            .list-videos .item {
                 width: calc(100% - 5px);
                 margin: 5px 0 0 5px;
             }
@@ -195,92 +214,93 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-     </style>
+    </style>
 </head>
 <body>
-
-<div class="box">
-    <div class="list-videos">
-        <div class="margin-fix">
-            <div class="item">
-                <div class="img">
+<div class="related-videos">
+    <div class="box">
+        <div class="list-videos">
+            <div class="margin-fix">
+                <div class="item">
+                    <div class="img">
+                        <a href="https://javhd.com/en/id/18180/sexy-brunette-gets-fucked-before-her-wedding?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
+                            <img class="thumb lazyload"
+                                 src="https://c4.cdnjav.com/content-01/thumbs/1-mkbd-s77-ruka-kanae-kirari-77-rental-girl-p/images/468x264/44s.jpg"
+                                 width="320" height="180" alt="Creampie Ruka Kanae Hardcore">
+                        </a>
+                    </div>
                     <a href="https://javhd.com/en/id/18180/sexy-brunette-gets-fucked-before-her-wedding?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
-                        <img class="thumb lazyload"
-                             src="https://c4.cdnjav.com/content-01/thumbs/1-mkbd-s77-ruka-kanae-kirari-77-rental-girl-p/images/468x264/44s.jpg"
-                             width="320" height="180" alt="Creampie Ruka Kanae Hardcore">
+                        <strong class="title">Creampie Ruka Kanae Hardcore</strong>
+                        <div class="wrap">
+                            <div class="duration">00:42:05</div>
+                            <div class="rating positive">72%</div>
+                        </div>
+                        <div class="wrap">
+                            <div class="added"><em>2022-06-09 08:02:56</em></div>
+                            <div class="views">1282.4k</div>
+                        </div>
                     </a>
                 </div>
-                <a href="https://javhd.com/en/id/18180/sexy-brunette-gets-fucked-before-her-wedding?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
-                    <strong class="title">Creampie Ruka Kanae Hardcore</strong>
-                    <div class="wrap">
-                        <div class="duration">00:42:05</div>
-                        <div class="rating positive">72%</div>
+                <div class="item">
+                    <div class="img">
+                        <a href="https://javhd.com/en/id/18794/anna-mihashi-fucked-and-made-to-provide-asian-blowjob?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
+                            <img class="thumb lazyload"
+                                 src="https://c4.cdnjav.com/content-01/thumbs/4-mkd-s93-anna-mihashi-kirari-93-p/images/468x264/49s.jpg"
+                                 width="320" height="180" alt="Maid Anna Mihashi Lingerie">
+                        </a>
                     </div>
-                    <div class="wrap">
-                        <div class="added"><em>2022-06-09 08:02:56</em></div>
-                        <div class="views">1282.4k</div>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <div class="img">
                     <a href="https://javhd.com/en/id/18794/anna-mihashi-fucked-and-made-to-provide-asian-blowjob?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
-                        <img class="thumb lazyload"
-                             src="https://c4.cdnjav.com/content-01/thumbs/4-mkd-s93-anna-mihashi-kirari-93-p/images/468x264/49s.jpg"
-                             width="320" height="180" alt="Maid Anna Mihashi Lingerie">
+                        <strong class="title">Maid Anna Mihashi Lingerie</strong>
+                        <div class="wrap">
+                            <div class="duration">00:10:01</div>
+                            <div class="rating positive">53%</div>
+                        </div>
+                        <div class="wrap">
+                            <div class="added"><em>2022-06-09 08:04:23</em></div>
+                            <div class="views">734.4k</div>
+                        </div>
                     </a>
                 </div>
-                <a href="https://javhd.com/en/id/18794/anna-mihashi-fucked-and-made-to-provide-asian-blowjob?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
-                    <strong class="title">Maid Anna Mihashi Lingerie</strong>
-                    <div class="wrap">
-                        <div class="duration">00:10:01</div>
-                        <div class="rating positive">53%</div>
+                <div class="item">
+                    <div class="img">
+                        <a href="https://javhd.com/en/id/19214/superb-creampie-asian-hardcore-withmei-matsumoto?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
+                            <img class="thumb lazyload"
+                                 src="https://c4.cdnjav.com/content-01/thumbs/2-smbd-135-mei-matsumoto-s-model-135-p/images/468x264/1s.jpg"
+                                 width="320" height="180" alt="Schoolgirl Mei Matsumoto Hardcore">
+                        </a>
                     </div>
-                    <div class="wrap">
-                        <div class="added"><em>2022-06-09 08:04:23</em></div>
-                        <div class="views">734.4k</div>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <div class="img">
                     <a href="https://javhd.com/en/id/19214/superb-creampie-asian-hardcore-withmei-matsumoto?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
-                        <img class="thumb lazyload"
-                             src="https://c4.cdnjav.com/content-01/thumbs/2-smbd-135-mei-matsumoto-s-model-135-p/images/468x264/1s.jpg"
-                             width="320" height="180" alt="Schoolgirl Mei Matsumoto Hardcore">
+                        <strong class="title">Schoolgirl Mei Matsumoto Hardcore</strong>
+                        <div class="wrap">
+                            <div class="duration">00:43:36</div>
+                            <div class="rating positive">38%</div>
+                        </div>
+                        <div class="wrap">
+                            <div class="added"><em>2022-06-09 08:05:36</em></div>
+                            <div class="views">668.5k</div>
+                        </div>
                     </a>
                 </div>
-                <a href="https://javhd.com/en/id/19214/superb-creampie-asian-hardcore-withmei-matsumoto?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
-                    <strong class="title">Schoolgirl Mei Matsumoto Hardcore</strong>
-                    <div class="wrap">
-                        <div class="duration">00:43:36</div>
-                        <div class="rating positive">38%</div>
+                <div class="item">
+                    <div class="img">
+                        <a href="https://javhd.com/en/id/18983/miho-ichiki-deals-cock-in-each-of-her-cremy-holes?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
+                            <img class="thumb lazyload"
+                                 src="https://c4.cdnjav.com/content-01/thumbs/1-cwpbd-107-miho-ichiki-catwalk-poison-107-p/images/468x264/46s.jpg"
+                                 width="320" height="180" alt="Hardcore Miho Ichiki Creampie">
+                        </a>
                     </div>
-                    <div class="wrap">
-                        <div class="added"><em>2022-06-09 08:05:36</em></div>
-                        <div class="views">668.5k</div>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <div class="img">
                     <a href="https://javhd.com/en/id/18983/miho-ichiki-deals-cock-in-each-of-her-cremy-holes?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
-                        <img class="thumb lazyload"
-                             src="https://c4.cdnjav.com/content-01/thumbs/1-cwpbd-107-miho-ichiki-catwalk-poison-107-p/images/468x264/46s.jpg"
-                             width="320" height="180" alt="Hardcore Miho Ichiki Creampie">
+                        <strong class="title">Hardcore Miho Ichiki Creampie</strong>
+                        <div class="wrap">
+                            <div class="duration">00:45:04</div>
+                            <div class="rating positive">54%</div>
+                        </div>
+                        <div class="wrap">
+                            <div class="added"><em>2022-06-09 08:06:23</em></div>
+                            <div class="views">1222.5k</div>
+                        </div>
                     </a>
                 </div>
-                <a href="https://javhd.com/en/id/18983/miho-ichiki-deals-cock-in-each-of-her-cremy-holes?nats=MjM4MzUuMi4yLjIuMC4wLjAuMC4w">
-                    <strong class="title">Hardcore Miho Ichiki Creampie</strong>
-                    <div class="wrap">
-                        <div class="duration">00:45:04</div>
-                        <div class="rating positive">54%</div>
-                    </div>
-                    <div class="wrap">
-                        <div class="added"><em>2022-06-09 08:06:23</em></div>
-                        <div class="views">1222.5k</div>
-                    </div>
-                </a>
             </div>
         </div>
     </div>
