@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>realjav</title>
+    <style>
+        body, button, input, select, optgroup, textarea {
+            color: #404040;
+            font-family: "Source Sans Pro", Graphik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.5;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        h2, h3, h4, h5, h6 {
+            clear: both;
+            font-family: 'Roboto Condensed';
+            font-weight: normal;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        a {
+            background-color: transparent;
+            color: #00aeef;
+            text-decoration: none;
+        }
+
+        a:hover, a:focus, a:active {
+            color: #0076a3;
+        }
+
+        a:hover, a:active {
+            outline: 0;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        figure {
+            margin: 2em 0;
+        }
+
+        ul, ol {
+            padding-left: 1rem;
+            margin-left: 1rem;
+        }
+
+
+        ul {
+            list-style: disc;
+        }
+
+        img {
+            border-style: none;
+            height: auto;
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        .grid-style.th-grid-2 .bam-entry {
+            width: 47.849462365591398%;
+            float: left;
+        }
+
+        .grid-style.th-grid-2 .bam-entry:nth-of-type(2n) {
+            margin-left: 4.301075268817204%;
+            float: right;
+        }
+
+        .bam-entry .category-list {
+            margin: 0 0 5px;
+        }
+
+        .bam-entry .entry-header {
+            margin-bottom: 15px;
+        }
+
+        .entry-title {
+            word-wrap: break-word;
+            -ms-word-wrap: break-word;
+        }
+
+        .bam-entry .entry-title {
+            font-size: 1.5625rem;
+            margin: 0 0 10px;
+            line-height: 1.2;
+        }
+
+        .bam-entry .entry-title a {
+            min-height: 60px;
+            max-height: 60px;
+            color: #000000;
+            display: -webkit-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+
+        .bam-entry .entry-title a:hover {
+             color: #dd9933;
+        }
+
+        .related-post-meta a:hover, .entry-meta a:hover {
+            color: #dd9933;
+        }
+
+        .entry-meta {
+            font-size: 0.8rem;
+            color: #999999;
+        }
+
+        .posted-on {
+            margin-right: 1em;
+            display: inline-block;
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .fa-clock-o:before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-size: 12px;
+            margin-right: 5px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAR8SURBVHgB3ZpHSyxLFICPbcacMWfMiKKgguJCQTf+VzcqqCAuVBAEI4o5YM45v3e/gpZWumpGnXDnftAw2j3VderEOjVh//1BfsnLy4scHh7K5uamnJ6eyu3trTw9PYlz6PDwcImOjpbk5GTJzs6WwsJCSU1NFcuy5DeE/VSAt7c3WV1dlaWlJTk7O5OfDBMRESF5eXlSX18vWVlZ8hO+LQCrvbCwIHNzc2qVfUFYWJgkJSVJS0uLFBQUfO+73xFgfX1dJicn5f7+XvwBgqCJjo4OZWpefccbAVjp8fFx2draEh+4jEcwrebmZqmrq/P4rEcBzs/PZXh4WK6uriSQoI3S0lJpb2+XyMhI/XMmAfb392V0dFQeHh4kWBCxurq6JDY21vW+VoC9vT01eW8dlXCYlpYmxcXFkpubK4mJiSps2tzd3Slt7uzsyPb2tvrbW3PMyMiQnp4eVyFcBeBFg4OD6iWeYFBstaqq6tOEPXF5eSkzMzMqdxCSPUHeQBPkE6MAmAuTJyGZYKDq6mppamoy2qgnEIQAcXR0ZNQIPlFbWyutra2f//9VgImJCRXnTRCzu7u7VSb1FfPz8zI9PS2vr6/aZ4hOaMGZKz7lcex+eXlZTOBUfX19Pp08YIY6O7dBOIR0+uWHBsiwAwMDSpU60tPTpbe31/iSr0xNTanV5TVRUVFKczi5jt3dXRU8np+fXe9jSg0NDcp04UMDRIaTkxPtwHFxcdLZ2fmtyQMBwbZSJnVzc2N8Pj8/XyUxXZHHWNRg9jjqKaLAysqKvL+/u34J22tra/O52eioqamR8vJy7X2qXaoCUAKw8qbVJ4QR3wNJY2OjJCQkuN5DC2tra8rslQAbGxtam4uJiVHlbqBh8oRpbN6Ni4sL5a8WUhwfH2sHIurgvMGgpKRE+Z4bRCQlwPX1tXC5QbIy2aK/QQs5OTna+9RqFqrQmQ8RJ1irb8OOTReRiEQWZbIu+rCpiI+Pl2DCApI/3GDhLVO16e2uyJ9gBTo/YOEtiikdf4MAVLi65IkjG3sav215BIII+SXOWicYGJdY59xOnLVOMLBMdm7yj0BBkNHtyanRLNM20BsBKPB06f4rhENdfaODyeu2tvhoBLsrPriZCwJQ+ZlyAd00Ln/B1laXaFkQKyUlRZsokN7T3tjfsEvU+SLatGh/cLlhN3CDBaUC9Y4O6iSLjkJmZqb2oYODg6BpgTJfZ/84MH1UFUYpW3Vm9Pj4KLOzsxJoWH1a97oQjel/CEDni0sH+2UaUIGEppdu/0zUKysrU/0oJQB1f0VFhbZ0oOagX0TSCgSLi4tG3yMqFhUVqc8fM2bfa9ICtjg2Nub3Ri9tFXo/usjD6rPJsvPJhwCog34LzqEDZx4ZGfGbEEQcFkkX94HE6Tw3+GQztOwqKyvFBFGpv7/f2MX4CXQEh4aGjItjH3w4q4d/r7kLId1et/npAQc5hfYg28CvBxyERQ4K/X7AYRPSR0w2IX3IZxPSx6xOQvag20lI/9TAScj+2MONYP7c5n9I2fdJ8FdhGAAAAABJRU5ErkJggg==');
+        }
+
+        .related-post-meta a, .entry-meta a {
+            color: #999999;
+        }
+
+        .bam-entry .entry-summary {
+            margin: 0 0 25px;
+        }
+
+        .wp-block-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .blocks-gallery-grid, .wp-block-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .blocks-gallery-grid .blocks-gallery-item, .wp-block-gallery .blocks-gallery-item {
+            margin: 0 1em 1em 0;
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            align-self: flex-start;
+            width: calc(50% - 1em);
+        }
+
+        .wp-block-gallery.is-cropped .blocks-gallery-item {
+            align-self: inherit;
+        }
+
+        .wp-block-gallery.columns-1 .blocks-gallery-item {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .blocks-gallery-grid .blocks-gallery-item:last-child, .wp-block-gallery .blocks-gallery-item:last-child {
+            margin-right: 0;
+        }
+
+        @media (min-width: 600px) {
+            .wp-block-gallery.columns-1 .blocks-gallery-image:nth-of-type(1n) {
+                margin-right: 0;
+            }
+        }
+
+        .blocks-gallery-grid, .wp-block-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .blocks-gallery-grid .blocks-gallery-item figure, .wp-block-gallery .blocks-gallery-item figure {
+            margin: 0;
+            height: 100%;
+        }
+
+        .wp-block-gallery.is-cropped .blocks-gallery-item a {
+            width: 100%;
+        }
+
+        @supports (position:sticky) {
+            .wp-block-gallery.is-cropped .blocks-gallery-item a {
+                height: 100%;
+                flex: 1;
+                -o-object-fit: cover;
+                object-fit: cover;
+            }
+        }
+
+        .blocks-gallery-grid .blocks-gallery-item img, .wp-block-gallery .blocks-gallery-item img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+        }
+
+        @supports (position:sticky) {
+            .blocks-gallery-grid .blocks-gallery-item img, .wp-block-gallery .blocks-gallery-item img {
+                width: auto;
+            }
+        }
+
+        .wp-block-gallery.is-cropped .blocks-gallery-item img {
+            width: 100%;
+        }
+
+        @supports (position:sticky) {
+            .wp-block-gallery.is-cropped .blocks-gallery-item img {
+                height: 100%;
+                flex: 1;
+                -o-object-fit: cover;
+                object-fit: cover;
+            }
+        }
+
+        .entry-readmore {
+            margin: 27px 0 0;
+        }
+
+        .bam-readmore {
+            border-radius: 3px;
+            color: #ffffff;
+            background: #dd9933;
+            font-size: 0.875rem;
+            font-weight: 600;
+            line-height: 1;
+            padding: 0.6em 1.2em;
+            text-transform: uppercase;
+        }
+
+        .bam-readmore:visited {
+            color: #ffffff;
+        }
+
+        .bam-readmore:hover {
+            color: #ffffff;
+            background: #222222;
+        }
+
+        .iframe {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.301075268817204% 50px;
+        }
+
+        @media (max-width: 500px) {
+            .iframe {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            article {
+                margin-bottom: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="iframe">
+    <article
+            class="bam-entry clearfix grid-entry th-col-1 post-66587 post type-post status-publish format-standard hentry tag-big-tits tag-cowgirl tag-creampie tag-featured-actress tag-k-m-produce tag-k-m-produce-vrkm-dvdid tag-non-ohana tag-pov tag-specialized-ceiling-angle tag-vr-exclusive">
+        <div class="blog-entry-inner clearfix">
+            <div class="blog-entry-content">
+                <div class="category-list">
+                </div>
+                <header class="entry-header">
+                    <h2 class="entry-title">
+                        <a href="https://javhd.com/en/id/18180/sexy-brunette-gets-fucked-before-her-wedding?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w">Sexy
+                            brunette gets fucked before her wedding</a>
+                    </h2>
+                    <div class="entry-meta">
+                    <span class="posted-on">
+                        <i class="fa fa-clock-o"></i>
+                        <a href="https://javhd.com/en/id/18180/sexy-brunette-gets-fucked-before-her-wedding?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w">
+                            <time class="entry-date published updated">2022-06-01</time>
+                        </a>
+                    </span>
+                    </div>
+                </header>
+                <div class="entry-summary">
+                    <figure class="wp-block-gallery columns-1 is-cropped fbx-instance">
+                        <ul class="blocks-gallery-grid">
+                            <li class="blocks-gallery-item">
+                                <figure>
+                                    <a href="https://javhd.com/en/id/18180/sexy-brunette-gets-fucked-before-her-wedding?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w"
+                                       class="fbx-link">
+                                        <img src="https://c4.cdnjav.com/content-01/thumbs/1-mkbd-s77-ruka-kanae-kirari-77-rental-girl-p/images/468x264/44s.jpg"
+                                             alt="Sexy brunette gets fucked before her wedding" width="445"
+                                             height="278">
+                                    </a>
+                                </figure>
+                            </li>
+                        </ul>
+                    </figure>
+                    <div class="entry-readmore">
+                        <a href="https://javhd.com/en/id/18180/sexy-brunette-gets-fucked-before-her-wedding?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w"
+                           class="bam-readmore">Read More</a>
+                    </div>
+                </div>
+                <footer class="entry-footer">
+                </footer>
+            </div>
+        </div>
+    </article>
+    <article
+            class="bam-entry clearfix grid-entry th-col-2 post-66584 post type-post status-publish format-standard hentry tag-creampie tag-featured-actress tag-genital-close-up tag-max-a tag-max-a-maxvr-dvdid tag-squirting tag-uesaka-mei tag-uniform tag-vr-exclusive">
+        <div class="blog-entry-inner clearfix">
+            <div class="blog-entry-content">
+                <div class="category-list">
+                </div>
+                <header class="entry-header">
+                    <h2 class="entry-title">
+                        <a href="https://javhd.com/en/id/18794/anna-mihashi-fucked-and-made-to-provide-asian-blowjob?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w">Maid
+                            Anna Mihashi Lingerie</a>
+                    </h2>
+                    <div class="entry-meta">
+                    <span class="posted-on">
+                        <i class="fa fa-clock-o"></i>
+                        <a href="https://javhd.com/en/id/18794/anna-mihashi-fucked-and-made-to-provide-asian-blowjob?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w">
+                            <time class="entry-date published updated">2022-06-01</time>
+                        </a>
+                    </span>
+                    </div>
+                </header>
+                <div class="entry-summary">
+                    <figure class="wp-block-gallery columns-1 is-cropped fbx-instance">
+                        <ul class="blocks-gallery-grid">
+                            <li class="blocks-gallery-item">
+                                <figure>
+                                    <a href="https://javhd.com/en/id/18794/anna-mihashi-fucked-and-made-to-provide-asian-blowjob?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w"
+                                       class="fbx-link">
+                                        <img src="https://c4.cdnjav.com/content-01/thumbs/4-mkd-s93-anna-mihashi-kirari-93-p/images/468x264/49s.jpg"
+                                             alt="Maid Anna Mihashi Lingerie" width="445" height="278">
+                                    </a>
+                                </figure>
+                            </li>
+                        </ul>
+                    </figure>
+
+                    <div class="entry-readmore">
+                        <a href="https://javhd.com/en/id/18794/anna-mihashi-fucked-and-made-to-provide-asian-blowjob?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w"
+                           class="bam-readmore">Read More</a>
+                    </div>
+                </div>
+                <footer class="entry-footer">
+                </footer>
+            </div>
+        </div>
+    </article>
+    <article
+            class="bam-entry clearfix grid-entry th-col-1 post-66587 post type-post status-publish format-standard hentry tag-big-tits tag-cowgirl tag-creampie tag-featured-actress tag-k-m-produce tag-k-m-produce-vrkm-dvdid tag-non-ohana tag-pov tag-specialized-ceiling-angle tag-vr-exclusive">
+        <div class="blog-entry-inner clearfix">
+            <div class="blog-entry-content">
+                <div class="category-list">
+                </div>
+                <header class="entry-header">
+                    <h2 class="entry-title">
+                        <a href="https://javhd.com/en/id/19214/superb-creampie-asian-hardcore-withmei-matsumoto?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w">Schoolgirl
+                            Mei Matsumoto Hardcore</a>
+                    </h2>
+                    <div class="entry-meta">
+                    <span class="posted-on">
+                        <i class="fa fa-clock-o"></i>
+                        <a href="https://javhd.com/en/id/19214/superb-creampie-asian-hardcore-withmei-matsumoto?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w">
+                            <time class="entry-date published updated">2022-06-01</time>
+                        </a>
+                    </span>
+                    </div>
+                </header>
+                <div class="entry-summary">
+                    <figure class="wp-block-gallery columns-1 is-cropped fbx-instance">
+                        <ul class="blocks-gallery-grid">
+                            <li class="blocks-gallery-item">
+                                <figure>
+                                    <a href="https://javhd.com/en/id/19214/superb-creampie-asian-hardcore-withmei-matsumoto?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w"
+                                       class="fbx-link">
+                                        <img src="https://c4.cdnjav.com/content-01/thumbs/2-smbd-135-mei-matsumoto-s-model-135-p/images/468x264/1s.jpg"
+                                             alt="Schoolgirl Mei Matsumoto Hardcore" width="445" height="278">
+                                    </a>
+                                </figure>
+                            </li>
+                        </ul>
+                    </figure>
+
+                    <div class="entry-readmore">
+                        <a href="https://javhd.com/en/id/19214/superb-creampie-asian-hardcore-withmei-matsumoto?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w"
+                           class="bam-readmore">Read More</a>
+                    </div>
+                </div>
+                <footer class="entry-footer">
+                </footer>
+            </div>
+        </div>
+    </article>
+    <article
+            class="bam-entry clearfix grid-entry th-col-2 post-66584 post type-post status-publish format-standard hentry tag-creampie tag-featured-actress tag-genital-close-up tag-max-a tag-max-a-maxvr-dvdid tag-squirting tag-uesaka-mei tag-uniform tag-vr-exclusive">
+        <div class="blog-entry-inner clearfix">
+            <div class="blog-entry-content">
+                <div class="category-list">
+                </div>
+                <header class="entry-header">
+                    <h2 class="entry-title">
+                        <a href="https://javhd.com/en/id/18983/miho-ichiki-deals-cock-in-each-of-her-cremy-holes?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w">Hardcore
+                            Miho Ichiki Creampie</a>
+                    </h2>
+                    <div class="entry-meta">
+                    <span class="posted-on">
+                        <i class="fa fa-clock-o"></i>
+                        <a href="https://javhd.com/en/id/18983/miho-ichiki-deals-cock-in-each-of-her-cremy-holes?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w">
+                            <time class="entry-date published updated">2022-06-01</time>
+                        </a>
+                    </span>
+                    </div>
+                </header>
+                <div class="entry-summary">
+                    <figure class="wp-block-gallery columns-1 is-cropped fbx-instance">
+                        <ul class="blocks-gallery-grid">
+                            <li class="blocks-gallery-item">
+                                <figure>
+                                    <a href="https://javhd.com/en/id/18983/miho-ichiki-deals-cock-in-each-of-her-cremy-holes?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w"
+                                       class="fbx-link">
+                                        <img src="https://c4.cdnjav.com/content-01/thumbs/1-cwpbd-107-miho-ichiki-catwalk-poison-107-p/images/468x264/46s.jpg"
+                                             alt="Hardcore Miho Ichiki Creampie" width="445" height="278">
+                                    </a>
+                                </figure>
+                            </li>
+                        </ul>
+                    </figure>
+
+                    <div class="entry-readmore">
+                        <a href="https://javhd.com/en/id/18983/miho-ichiki-deals-cock-in-each-of-her-cremy-holes?nats=Mjc1MzEuMi4yLjI4NS4xNy4wLjAuMC4w"
+                           class="bam-readmore">Read More</a>
+                    </div>
+                </div>
+                <footer class="entry-footer">
+                </footer>
+            </div>
+        </div>
+    </article>
+</div>
+
+</body>
+</html>
