@@ -29,6 +29,17 @@
             gap: 0.25rem;
         }
 
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .lg\:gap-2 {
+                gap: 0.5rem;
+            }
+        }
+
+
         .my-auto {
             margin-top: auto;
             margin-bottom: auto;
