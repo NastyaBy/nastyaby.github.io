@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Watchfreejavonline</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 400;
+            line-height: 30px;
+            word-wrap: break-word;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+
+        .iframe__block {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: 1px solid #dddcdc;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            float: none;
+            overflow: hidden;
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+            background: #fff;
+        }
+
+        .block__img {
+            position: relative;
+            flex-grow: 1;
+            max-width: 50%;
+        }
+
+        .block__img img {
+            width: 100%;
+            height: auto;
+        }
+
+        .block__img img:hover {
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            transition: all 0.2s;
+            -webkit-opacity: 0.5;
+            -moz-opacity: 0.5;
+            -ms-opacity: 0.5;
+            -o-opacity: 0.5;
+            opacity: 0.5;
+        }
+
+        .icon {
+            position: absolute;
+            top: inherit;
+            bottom: 30px;
+            left: 20px;
+            color: #fff;
+            background: #2d6ff7 url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='87' height='76' fill='none'%3E%3Cpath fill='%23fff' d='M86.28 19.374v48.532a8.09 8.09 0 0 1-8.089 8.089H8.09A8.09 8.09 0 0 1 0 67.906V19.374a8.09 8.09 0 0 1 8.089-8.089h14.83l2.072-5.544A8.077 8.077 0 0 1 32.557.5h21.149c3.37 0 6.387 2.09 7.566 5.24l2.09 5.545h14.83a8.09 8.09 0 0 1 8.088 8.089ZM63.362 43.64c0-11.156-9.066-20.222-20.222-20.222S22.918 32.484 22.918 43.64s9.066 20.222 20.222 20.222 20.222-9.066 20.222-20.222Zm-5.393 0c0 8.173-6.656 14.83-14.829 14.83-8.173 0-14.83-6.657-14.83-14.83s6.657-14.83 14.83-14.83 14.83 6.657 14.83 14.83Z'/%3E%3C/svg%3E%0A") 50% 50% no-repeat;
+            background-size: 22px 20px;
+            border-radius: 4px;
+            border-width: 2px;
+            line-height: 20px;
+            padding: 6px;
+            font-size: 22px;
+            width: 22px;
+            height: 26px;
+        }
+
+        .block__text {
+            padding: 0 0 0 15px;
+            flex-grow: 1;
+            max-width: 50%;
+        }
+
+        .text__category a {
+            display: inline-block;
+            font-size: 10px;
+            padding: 4px 6px;
+            line-height: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-right: 5px;
+            color: #fff;
+            background: #2d6ff7;
+        }
+
+        .text__category a:hover {
+            box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 15%);
+        }
+
+        .text__name {
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.05em;
+            margin: 10px 0 6px 0;
+            font-size: 22px;
+            line-height: 32px;
+            position: relative;
+            max-height: 65px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+        }
+
+        .text__name a {
+            color: #000;
+        }
+
+        .text__name a:hover {
+            color: #2d6ff7;
+        }
+
+        .text__data {
+            padding: 0 0 0 16px;
+            margin: 0 14px 0 0;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            background: url("data:image/svg+xml,%3Csvg width='87' height='87' viewBox='0 0 87 87' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M43.14 0.5C19.3086 0.5 0 19.8086 0 43.64C0 67.4714 19.3086 86.78 43.14 86.78C66.9714 86.78 86.28 67.4714 86.28 43.64C86.28 19.8086 66.9714 0.5 43.14 0.5ZM59.2288 54.9469L55.7498 59.2956C55.5214 59.5811 55.2391 59.8188 54.919 59.9951C54.5988 60.1714 54.247 60.283 53.8837 60.3234C53.5205 60.3638 53.1528 60.3322 52.8017 60.2305C52.4506 60.1287 52.123 59.9589 51.8376 59.7305L40.1828 51.0816C39.3685 50.4297 38.7112 49.6029 38.2595 48.6625C37.8079 47.7222 37.5734 46.6923 37.5735 45.6491V18.591C37.5735 17.8528 37.8668 17.1449 38.3887 16.6229C38.9107 16.101 39.6186 15.8077 40.3568 15.8077H45.9232C46.6614 15.8077 47.3693 16.101 47.8913 16.6229C48.4132 17.1449 48.7065 17.8528 48.7065 18.591V43.64L58.7956 51.0329C59.0812 51.2614 59.319 51.5439 59.4953 51.8643C59.6716 52.1847 59.7831 52.5367 59.8233 52.9001C59.8635 53.2636 59.8317 53.6315 59.7297 53.9827C59.6277 54.3338 59.4575 54.6615 59.2288 54.9469V54.9469Z' fill='%23BDBDBD'/%3E%3C/svg%3E%0A") 0 50% no-repeat;
+            background-size: 12px 12px;
+        }
+
+        .text__data a {
+            color: #bdbdbd;
+        }
+
+        .text__data a:hover {
+            color: #2d6ff7;
+        }
+
+        @media (max-width: 765px) {
+            .iframe__block {
+                flex-direction: column;
+            }
+            .block__img {
+                width: 100%;
+                max-width: 100%;
+            }
+            .block__text {
+                width:  100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="iframe">
+    <div class="iframe__block block">
+        <div class="block__img">
+            <a href="https://javhd.com/ko/id/18983/miho-ichiki-deals-cock-in-each-of-her-cremy-holes?nats=MTk1OTAuMjAuMi4yLjAuMC4wLjAuMA">
+                <img width="468" height="264" src="https://c4.cdnjav.com/content-01/thumbs/1-cwpbd-107-miho-ichiki-catwalk-poison-107-p/images/468x264/46s.jpg" class="img-responsive wp-post-image" alt="" decoding="async" loading="lazy" sizes="(max-width: 919px) 100vw, 919px">
+            </a>
+            <span class="icon"></span>
+        </div>
+        <div class="block__text text">
+            <div class="text__category">
+                <a href="https://javhd.com/ko/id/18983/miho-ichiki-deals-cock-in-each-of-her-cremy-holes?nats=MTk1OTAuMjAuMi4yLjAuMC4wLjAuMA" aria-label="javhd">javhd</a>
+            </div>
+            <div class="text__name">
+                <a href="https://javhd.com/ko/id/18983/miho-ichiki-deals-cock-in-each-of-her-cremy-holes?nats=MTk1OTAuMjAuMi4yLjAuMC4wLjAuMA" aria-label="수탉이 Miho 오크 거래 모든   그녀의 cremy 구멍">수탉이 Miho 오크 거래 모든 그녀의 cremy 구멍</a>
+            </div>
+            <div class="text__data">
+                <a href="https://javhd.com/ko/id/18983/miho-ichiki-deals-cock-in-each-of-her-cremy-holes?nats=MTk1OTAuMjAuMi4yLjAuMC4wLjAuMA" aria-label="Dec 5, 2022">Dec 5, 2022</a>
+            </div>
+        </div>
+    </div>
+    <div class="iframe__block block">
+        <div class="block__img">
+            <a href="https://javhd.com/ko/id/19597/group-japan-blow-job-by-busty-doremi-miyamoto?nats=MTk1OTAuMjAuMi4yLjAuMC4wLjAuMA">
+                <img width="468" height="264" src="https://c4.cdnjav.com/content-01/thumbs/2-mkbd-s101-doremi-miyamoto-kirari-101-p/images/468x264/38s.jpg" class="img-responsive wp-post-image" alt="" decoding="async" loading="lazy" sizes="(max-width: 919px) 100vw, 919px">
+            </a>
+            <span class="icon"></span>
+        </div>
+        <div class="block__text text">
+            <div class="text__category">
+                <a href="https://javhd.com/ko/id/19597/group-japan-blow-job-by-busty-doremi-miyamoto?nats=MTk1OTAuMjAuMi4yLjAuMC4wLjAuMA" aria-label="javhd">javhd</a>
+            </div>
+            <div class="text__name">
+                <a href="https://javhd.com/ko/id/19597/group-japan-blow-job-by-busty-doremi-miyamoto?nats=MTk1OTAuMjAuMi4yLjAuMC4wLjAuMA" aria-label="그룹 바람에 일을 역시 미리 doremi 일본">그룹 바람에 일을 역시 미리 doremi 일본</a>
+            </div>
+            <div class="text__data">
+                <a href="https://javhd.com/ko/id/19597/group-japan-blow-job-by-busty-doremi-miyamoto?nats=MTk1OTAuMjAuMi4yLjAuMC4wLjAuMA" aria-label="Dec 5, 2022">Dec 5, 2022</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
